@@ -32,4 +32,31 @@ class SampleTest extends TestCase
     {
         $this->assertContains(3, [1, 2, 3]);
     }
+
+    public function testArrayDiff(): void
+    {
+        $this->assertSame(
+            [1, 2,  3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6]
+        );
+    }
+
+    public function testLongArrayDiff(): void
+    {
+        $this->assertSame(
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2,  3, 4, 5, 6],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6]
+        );
+    }
+
+    /**
+     * This test will failed due to weak array comparision
+     */
+    public function testArrayWeakComparison(): void
+    {
+        $this->assertEquals(
+            [1, 2, 3, 4, 5, 6],
+            ['1', 2, 3, 4, 5, 6]
+        );
+    }
 }
