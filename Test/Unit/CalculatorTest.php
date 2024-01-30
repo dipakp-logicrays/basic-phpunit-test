@@ -33,28 +33,4 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(4, $result);
     }
-
-    public function testTrueReturnstrue ()
-    {
-        $output = false;
-        if (1===1) {
-            $output = true;
-        }
-
-        $this->assertTrue($output);
-    }
-
-    public function testCheckUserHasNameKey(): void
-    {
-        $user = [
-            "name" => "Dipak",
-            "age" => 28
-        ];
-        $this->assertArrayHasKey('name', $user);
-    }
-
-    public function testArrayContains(): void
-    {
-        $this->assertContains(3, [1, 2, 3]);
-    }
 }
