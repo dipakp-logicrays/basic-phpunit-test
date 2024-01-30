@@ -2,33 +2,33 @@
 
 class EmployeeTest extends \PHPUnit\Framework\TestCase
 {
+    protected $employee;
+
+    public function setUp(): void
+    {
+        $this->employee = new App\Model\Employee;
+    }
     public function testGetEmployeeName(): void
     {
-        $employee = new App\Model\Employee;
+        $this->employee->setName("John");
 
-        $employee->setName("John");
-
-        $this->assertEquals($employee->getName(),'John');
+        $this->assertEquals($this->employee->getName(),'John');
     }
 
     public function testGetEmployeeAge(): void
     {
-        $employee = new App\Model\Employee;
+        $this->employee->setAge(25);
 
-        $employee->setAge(25);
-
-        $this->assertEquals($employee->getAge(),25);
+        $this->assertEquals($this->employee->getAge(),25);
     }
 
     public function testGetEmployeeNameAndAge(): void
     {
-        $employee = new App\Model\Employee;
+        $this->employee->setNameAndAge('John', 25);
 
-        $employee->setNameAndAge('John', 25);
+        $this->employeeData = ['John', 25];
 
-        $employeeData = ['John', 25];
-
-        $this->assertEquals($employee->getNameAndAge(),$employeeData);
-        $this->assertArrayHasKey(1, $employee->getNameAndAge());
+        $this->assertEquals($this->employee->getNameAndAge(),$this->employeeData);
+        $this->assertArrayHasKey(1, $this->employee->getNameAndAge());
     }
 }
