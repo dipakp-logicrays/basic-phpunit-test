@@ -4,7 +4,7 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 {
     public function testAdd()
     {
-        $calculator = new App\Calculator;
+        $calculator = new App\Calculator();
         $result = $calculator->add(20,5);
 
         $this->assertEquals(25, $result);
@@ -12,7 +12,7 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
     public function testSubtract()
     {
-        $calculator = new App\Calculator;
+        $calculator = new App\Calculator();
         $result = $calculator->subtract(20,5);
 
         $this->assertEquals(15, $result);
@@ -20,7 +20,7 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
     public function testMultiply()
     {
-        $calculator = new App\Calculator;
+        $calculator = new App\Calculator();
         $result = $calculator->multiply(20,5);
 
         $this->assertEquals(100, $result);
@@ -28,7 +28,7 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
     public function testDivide()
     {
-        $calculator = new App\Calculator;
+        $calculator = new App\Calculator();
         $result = $calculator->divide(20,5);
 
         $this->assertEquals(4, $result);

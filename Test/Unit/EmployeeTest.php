@@ -6,7 +6,7 @@ class EmployeeTest extends \PHPUnit\Framework\TestCase
 
     public function setUp(): void
     {
-        $this->employee = new App\Model\Employee;
+        $this->employee = new App\Model\Employee();
     }
     public function testGetEmployeeName(): void
     {
