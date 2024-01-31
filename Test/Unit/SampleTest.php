@@ -4,6 +4,9 @@ use PHPUnit\Framework\TestCase;
 
 class SampleTest extends TestCase
 {
+    /**
+     *  Example for assertTrue()
+     */
     public function testTrueReturnstrue ()
     {
         $output = false;
@@ -16,6 +19,7 @@ class SampleTest extends TestCase
 
     /**
      * Without start function name with test keyword
+     * Example for assertArrayHasKey
      *
      * @test
      */
@@ -28,11 +32,16 @@ class SampleTest extends TestCase
         $this->assertArrayHasKey('name', $user);
     }
 
+    /**
+     *  Example for assertContains()
+     */
     public function testArrayContains(): void
     {
         $this->assertContains(3, [1, 2, 3]);
     }
-
+    /**
+     *  Example for assertSame(), short array diff
+     */
     public function testArrayDiff(): void
     {
         $this->assertSame(
@@ -41,6 +50,9 @@ class SampleTest extends TestCase
         );
     }
 
+    /**
+     *  Example for assertSame(), Long array diff
+     */
     public function testLongArrayDiff(): void
     {
         $this->assertSame(
@@ -50,7 +62,7 @@ class SampleTest extends TestCase
     }
 
     /**
-     * This test will failed due to weak array comparision
+     * Example for assertEquals()
      */
     public function testArrayWeakComparison(): void
     {
@@ -58,5 +70,19 @@ class SampleTest extends TestCase
             [1, 2, 3, 4, 5, 6],
             ['1', 2, 3, 4, 5, 6]
         );
+    }
+
+    /**
+     * Example for markTestIncomplete()
+     * @test
+     */
+    public function inCompleteTest(): void
+    {
+        //Optional: Test anything here, if you want
+        $this->assertTrue(true,"This should already work.");
+
+        //Stop here and mark this as in incomplete. print it with string
+        $this->markTestIncomplete("This test has not been implemented yet.");
+
     }
 }
