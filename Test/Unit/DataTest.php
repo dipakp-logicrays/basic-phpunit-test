@@ -14,6 +14,9 @@ final class DataTest extends TestCase
         $this->assertSame($expected, $a + $b);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function additionProvider(): array
     {
         return [
@@ -32,6 +35,9 @@ final class DataTest extends TestCase
         $this->assertSame($expected, $a-$b);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function additionalDataProvider(): array
     {
         return [
